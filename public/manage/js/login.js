@@ -75,8 +75,8 @@ $(function() {
     $.ajax({
       type: "post",
       url: "/employee/employeeLogin",
-      dataType: "json",
       data: $('#form').serialize(),
+      dataType: "json",
       success: function( info ) {
         console.log( info )
 
