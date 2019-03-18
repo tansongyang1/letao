@@ -1,0 +1,14 @@
+.body_bg{
+  background: #222D32;
+}
+.m-top{
+  margin-top: 150px;
+}
+.panel-title {
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+}
+.panel-primary {
+  border-left: #337ab7;
+}
