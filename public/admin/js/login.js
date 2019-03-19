@@ -18,7 +18,7 @@ $(function () {
             message: '用户名长度必须在3到9之间'
           },
           callback: {
-            message: '用户名不能为空'
+            message: '用户名不存在'
           }
 
         }
