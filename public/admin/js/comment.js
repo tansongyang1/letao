@@ -14,8 +14,6 @@ $(function () {
 
   // 模态框 
   $('.icon_logoout').click(function() {
-    console.log(11);
-    
     // 让模态框显示
     $('#logoutModal').modal("show");
   })
