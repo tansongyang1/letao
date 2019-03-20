@@ -1,0 +1,162 @@
+.body_bg {
+  background: #222D32;
+}
+
+.m-top {
+  margin-top: 150px;
+}
+
+.panel-title {
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.panel-primary {
+  border-left: #337ab7;
+}
+
+/* 侧边栏 */
+.lt_aside {
+  width: 180px;
+  background-color: #222D32;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  transition: all 1s;
+  top: 0;
+  left: 0;
+}
+
+.lt_aside.hidemenu {
+  left: -180px;
+}
+
+.brand {
+  height: 50px;
+  width: 100%;
+  background-color: #367FA9;
+  line-height: 50px;
+  text-align: center;
+}
+
+.brand a {
+  font-size: 24px;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+.user {
+  width: 180px;
+  height: 180px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.user img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.user p {
+  color: #fff;
+  font-size: 18px;
+  /* padding-top: 10px; */
+  height: 40px;
+  line-height: 40px;
+}
+
+.lt_main {
+  padding-top: 50px;
+  width: 100%;
+  padding-left: 180px;
+  transition: all 1s;
+}
+
+.lt_main.hidemenu {
+  padding-left: 0px;
+}
+
+/* 导航 */
+.nav a {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 40px;
+  display: block;
+  border-left: 3px solid transparent;
+}
+
+.child a {
+  display: block;
+  padding-left: 60px;
+}
+
+.lt_aside .nav a.current {
+  background-color: #1D1F21;
+  border-left: 3px solid #006699;
+}
+
+/* topbar */
+.lt_topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 180px;
+  height: 50px;
+  background-color: #3C8DBC;
+  z-index: 998;
+  transition: all 1s;
+}
+
+.lt_topbar.hidemenu {
+  padding-left: 0px;
+}
+
+.icon_menu,
+.icon_logoout {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  /* transition: all 1s; */
+}
+
+.breadcrumb {
+  margin-top: 20px;
+}
+
+.breadcrumb li:nth-child(1) a {
+  color: #337ab7;
+}
+
+.breadcrumb li:nth-child(2) a {
+  color: #777;
+}
+
+/* 内容主体 */
+.lt_content {}
+
+.echarts_1,
+.echarts_2 {
+  width: 48%;
+  height: 400px;
+  background-color: #daa520;
+}
