@@ -10,6 +10,15 @@
   <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="./css/comment.css">
+  <style>
+    .table>thead:first-child>tr:first-child>th {
+      text-align: center;
+    }
+
+    #addbtn {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,45 +57,97 @@
     </div>
   </div>
 
-
-  <div class="lt_main">
-    <!-- topbar -->
-    <div class="lt_topbar">
-      <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
-      <a href="javascript:;" class="pull-right icon_logoout"><span class="glyphicon glyphicon-log-out"></span></a>
-    </div>
-    <!-- 路径导航 -->
-    <div class="container-fluid">
+  <div class="container-fluid">
+    <div class="lt_main">
+      <!-- topbar -->
+      <div class="lt_topbar">
+        <a href="javascript:;" class="pull-left icon_menu"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a href="javascript:;" class="pull-right icon_logoout"><span class="glyphicon glyphicon-log-out"></span></a>
+      </div>
+      <!-- 路径导航 -->
       <ol class="breadcrumb">
         <li><a href="index.html">管理系统</a></li>
         <li><a href="#">分类管理</a></li>
         <li>一级分类</li>
       </ol>
+      <button class="btn btn-default" id="addbtn">添加分类</button>
+      <table class="table table-bordered table-hover text-center">
+        <thead>
+          <tr class=" text-center">
+            <th width="20%">序号</th>
+            <th width="80%">一级分类</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+
+      </table>
+      <div class="text-right">
+          <ul id="paginator"></ul>
+        </div>
     </div>
   </div>
-  !-- 模态框 -->
-  <div class="modal fade" id="logoutModal">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-            <h4 class="modal-title">温馨提示</h4>
-          </div>
-          <div class="modal-body">
-            <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
-          </div>
+  <!-- 添加分类的模态框 -->
+  <div class="modal fade" id="addModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="请输入一级分类" name="categoryName">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <!-- html5 新增 form 属性, 可以让表单外的按钮, 与表单关联起来(就相当于是写在了表单里面)-->
+          <button type="submit" class="btn btn-primary addbtn" form="form" >添加</button>
         </div>
       </div>
     </div>
+  </div>
+  <!-- 模态框 -->
+  <div class="modal fade" id="logoutModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/html" id="mp">
+    {{each rows v i}}
+    <tr>
+      <td>{{(page-1)*size+i+1}}</td>
+      <td>{{v.categoryName}}</td>
+    </tr>
+    {{/each}}
+  </script>
   <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
   <script src="./js/comment.js"></script>
+  <script src="./js/frist.js"></script>
 </body>
 
 </html>
