@@ -1,4 +1,4 @@
-$(function () {
+
   // 进度条
   //  ajaxStart 所有的 ajax 开始调用
   $(document).ajaxStart(function () {
@@ -46,23 +46,25 @@ $(function () {
     })
   })
 
-})
+
 // 封装分页
     function paginator(info,render) {
+      // console.log(info)
       $('#paginator').bootstrapPaginator({
         // 版本号
         bootstrapMajorVersion: 3,
         // 当前页
+        
         currentPage: info.page,
         // 总页数
         totalPages: Math.ceil(info.total / info.size),
   
         // 给页码添加点击事件
-        onPageClicked: function (a, b, c, page) {
+        onPageClicked: function (a, b, c, p) {
           // 将选中的页码更新到 currentPage
-          // currentPage = page;
+          currentPage = p;
           // 重新渲染
-          render(page);
+          render(currentPage);
         }
       })
     }
