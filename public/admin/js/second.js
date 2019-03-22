@@ -90,7 +90,8 @@ $(function () {
   })
   $("#form2").on('success.form.bv', function (e) {
     e.preventDefault();
-    //使用ajax提交逻辑
+    console.log($("#form2").serialize());
+    
     $.ajax({
       url:'/category/addSecondCategory',
       type : 'post',
