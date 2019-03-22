@@ -51,8 +51,8 @@ $(function () {
 
     //2. 指定校验时的图标显示，默认是bootstrap风格
     feedbackIcons: {
-      valid: 'glyphicon glyphicon-ok',
-      invalid: 'glyphicon glyphicon-remove',
+      valid: 'glyphicon glyphicon-hand-right',
+      invalid: 'glyphicon glyphicon-hand-left',
       validating: 'glyphicon glyphicon-refresh'
     },
 
