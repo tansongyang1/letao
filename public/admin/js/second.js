@@ -88,6 +88,7 @@ $(function () {
       
     }
   })
+  // 表单阻止默认 关闭模态框 重置表单
   $("#form2").on('success.form.bv', function (e) {
     e.preventDefault();
     console.log($("#form2").serialize());

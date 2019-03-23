@@ -97,7 +97,6 @@ $(function() {
       $('#imgBox img').attr("src", picAddr);
       // 将图片地址存在隐藏域中
       $('[name="brandLogo"]').val( picAddr );
-
       // 重置校验状态
       $('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID")
     }
@@ -106,17 +105,14 @@ $(function() {
 
   // 5. 配置表单校验
   $('#form').bootstrapValidator({
-
     // 将默认的排除项, 重置掉 (默认会对 :hidden, :disabled等进行排除)
     excluded: [],
-
     // 配置图标
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
       invalid: 'glyphicon glyphicon-remove',
       validating: 'glyphicon glyphicon-refresh'
     },
-
     // 校验的字段
     fields: {
       // 品牌名称
@@ -148,31 +144,25 @@ $(function() {
   });
 
 
-
   // 6. 注册校验成功事件, 通过 ajax 进行添加
   $("#form").on("success.form.bv", function( e ) {
     // 阻止默认的提交
     e.preventDefault();
-
     $.ajax({
       url: "/category/addSecondCategory",
       type: "post",
       data: $('#form').serialize(),
       success: function( info ) {
         console.log( info )
-
         // 关闭模态框
         $('#addModal').modal("hide");
         // 重置表单里面的内容和校验状态
         $('#form').data("bootstrapValidator").resetForm( true );
-
         // 重新渲染第一页
         currentPage = 1;
         render();
-
         // 找到下拉菜单文本重置
         $('#dropdownText').text("请选择1级分类")
-
         // 找到图片重置
         $('#imgBox img').attr("src", "images/none.png")
       }
