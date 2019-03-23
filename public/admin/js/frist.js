@@ -6,6 +6,10 @@ $(function () {
   // 模态框
   $('#addbtn').on('click', function () {
     $('#addModal').modal('show')
+    // 点击取消重置表单
+    $('#offbtn').on('click', function () {
+      $form.data('bootstrapValidator').resetForm(true)
+    })
   })
   // 表单校验
   var $form = $('#form')
@@ -24,6 +28,7 @@ $(function () {
         }
       }
     }
+
   })
   $form.on('success.form.bv', function (e) {
     // 阻止浏览器的默认行为

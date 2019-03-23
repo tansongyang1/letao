@@ -18,6 +18,14 @@ $(function () {
         $('.dropdown-menu').html(template('logo', info))
       }
     })
+    //点击取消重置表单
+    $('#offbtn').on('click', function () {
+      // console.log(111);
+      $('#form2').data('bootstrapValidator').resetForm(true)
+      $('.dropdown-text').text("请选择1级分类")
+      // 找到图片重置
+      $('#img img').attr("src", "images/none.png")
+    })
   })
   $('.dropdown-menu').on('click', 'a', function () {
     var txt = $(this).text();

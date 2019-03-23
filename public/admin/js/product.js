@@ -18,6 +18,17 @@ $(function () {
         $('.dropdown-menu').html(template('erd', info))
       }
     })
+
+    //点击取消重置表单
+    $('#offbtn').on('click', function () {
+      // console.log(111);
+      $('#form').data('bootstrapValidator').resetForm(true)
+      // 找到下拉菜单文本重置
+      $('.dropdown-text').text("请选择二级分类")
+      // 找到图片重置
+      $('#img img').remove()
+      picArr = []
+    })
   })
   //事件委托
   $('.dropdown-menu').on('click', 'a', function () {
