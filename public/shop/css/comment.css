@@ -5,17 +5,21 @@
   list-style: none;
   box-sizing: border-box;
 }
+img {
+  display: block;
+  width: 100%;
+}
 body,
 html {
   height: 100%;
   width: 100%;
+  background: #fff;
 }
 .lt_container {
   min-width: 320px;
   max-width: 640px;
   width: 100%;
   height: 100%;
-  background-color: pink;
   margin: 0 auto;
   padding: 45px 0 55px 0;
 }
@@ -57,7 +61,7 @@ html {
 .lt_main {
   width: 100%;
   height: 100%;
-  background-color: seagreen;
+  position: relative;
 }
 .lt_footer {
   height: 55px;
