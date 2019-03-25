@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <link rel="stylesheet" href="./css/comment.css">
+  <link rel="stylesheet" href="./css/category.css">
   <link rel="icon" href="./favicon.ico">
 </head>
 
@@ -20,11 +21,36 @@
       <h3>乐淘云购</h3>
       <a href="search.html" class="inco_right"><span class="fa fa-search"></span></a>
     </div>
-    <div class="lt_main"></div>
+    <div class="lt_main">
+      <div class="lt_category_left">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+            <ul>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="lt_category_right">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+            <ul class="mui-clearfix">
+
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
     <div class="lt_footer">
       <ul>
         <li>
-          <a href="index.html" >
+          <a href="index.html">
             <span class="fa fa-home"></span>
             <p>首页</p>
           </a>
@@ -50,6 +76,29 @@
       </ul>
     </div>
   </div>
+  <!-- 左模板 -->
+  <script type="text/html" id="category_left">
+    {{each rows v i}}
+    <li data-id="{{v.id}}" class="{{i === 0 ?'current':''}}">{{v.categoryName}}</li>
+    {{/each}}
+  </script>
+  <!-- 右模板 -->
+  <script type="text/html" id="category_right">
+    {{if rows.length === 0}}
+    <div class ="tips"> 没有更多分类信息了</div>
+    {{/if}}
+    {{each rows v i}}
+    <li>
+      <img src="{{v.brandLogo}}" alt="">
+      <p>{{v. brandName}}</p>
+    </li>
+    {{/each}}
+  </script>
+  <script src="./lib/zepto/zepto.min.js"></script>
+  <script src="./lib/mui/js/mui.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/category.js"></script>
 </body>
 
 </html>

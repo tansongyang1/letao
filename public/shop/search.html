@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
   <link rel="stylesheet" href="./css/comment.css">
+  <link rel="stylesheet" href="./css/search.css">
   <link rel="icon" href="./favicon.ico">
 </head>
 
@@ -20,17 +21,32 @@
       <h3>搜索中心</h3>
       <!-- <a href="search.html" class="inco_right"><span class="fa fa-search"></span></a> -->
     </div>
-    <div class="lt_main"></div>
+    <div class="lt_main">
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+          <!--这里放置真实显示的DOM内容-->
+          <!-- 搜索框 -->
+          <div class="lt_search">
+            <input type="text" class="search_input" placeholder="请输入搜索关键字">
+            <button class="mui-btn mui-btn-primary search_btn">搜索</button>
+          </div>
+          <!-- 历史记录 -->
+          <div class="lt_history">
+
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="lt_footer">
       <ul>
         <li>
-          <a href="index.html" >
+          <a href="index.html">
             <span class="fa fa-home"></span>
             <p>首页</p>
           </a>
         </li>
         <li>
-          <a href="category.html" >
+          <a href="category.html">
             <span class="fa fa-bars"></span>
             <p>分类页</p>
           </a>
@@ -42,7 +58,7 @@
           </a>
         </li>
         <li>
-          <a href="user.html" class="current">
+          <a href="user.html">
             <span class="fa fa-user"></span>
             <p>用户中心</p>
           </a>
@@ -50,6 +66,31 @@
       </ul>
     </div>
   </div>
+  <script type="text/html" id="s_history">
+    {{if arr.length ===0}}
+    <p>没有历史记录</p>
+    {{else}}
+    <div class="title">
+      <span class="mui-pull-left">搜索历史</span>
+      <span class="mui-pull-right btn_empty"><i class="fa fa-trash"></i>清空记录</span>
+    </div>
+    <div class="content">
+      <ul>
+        {{each arr v i}}
+        <li>
+          <a href="searchList.html?key={{v}}">{{v}}</a>
+          <i data-index="{{i}}" class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+  </script>
+  <script src="./lib/zepto/zepto.min.js"></script>
+  <script src="./lib/mui/js/mui.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/search.js"></script>
 </body>
 
 </html>

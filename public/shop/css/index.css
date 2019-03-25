@@ -1,13 +1,16 @@
 .lt_nav {
   padding: 10px;
 }
+
 .lt_nav li {
   width: 33.33%;
   float: left;
 }
+
 .lt_product {
   padding: 10px;
 }
+
 .lt_product_item {
   border: 1px solid #ccc;
   padding: 10px;
@@ -16,18 +19,23 @@
   margin-bottom: 10px;
   text-align: center;
 }
+
 .lt_product_item:nth-child(2n+1) {
   margin-right: 4%;
 }
+
 .lt_product_item p {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 10px;
   color: #8f8f94;
+  height: 39px;
 }
+
 .lt_product_item .price {
   color: red;
 }
+
 .lt_product_item .oldPrice {
   text-decoration: line-through;
 }

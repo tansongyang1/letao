@@ -30,13 +30,20 @@ $(function () {
       dataType: 'json',
       success: function (info) {
         console.log(info);
-        
-        if(info.error){
+
+        if (info.error) {
           mui.toast('用户名或密码错误')
           return
         }
-        if(info.success){
-          location.href = "user.html";
+        if (info.success) {
+          if (location.search.indexOf("retUrl") > -1) {
+            // (1) 传了地址, 就跳转到对应页面
+            var retUrl = location.search.replace("?retUrl=", "");
+            location.href = retUrl;
+          } else {
+            // (2) 没传地址, 跳转到个人中心页
+            location.href = "user.html";
+          }
         }
       }
     })
