@@ -1,0 +1,86 @@
+.lt_search {
+  padding: 10px;
+  position: relative;
+}
+.lt_search .search_input {
+  height: 34px;
+  padding-left: 15px;
+  padding-right: 33px;
+  margin: 0;
+  border: 1px solid #007AFF;
+  font-size: 12px;
+}
+.lt_search .search_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 0 3px 3px 0;
+}
+.lt_sort {
+  height: 30px;
+  line-height: 30px;
+  background: #eee;
+  font-size: 12px;
+  text-align: center;
+}
+.lt_sort a {
+  display: block;
+  float: left;
+  width: 25%;
+  color: #666;
+}
+.lt_sort a.current {
+  color: #FF8C00;
+}
+.lt_product {
+  padding: 10px;
+}
+.lt_product_item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  float: left;
+  width: 48%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.lt_product_item:nth-child(2n+1) {
+  margin-right: 4%;
+}
+.lt_product_item img {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+}
+.lt_product_item p {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #8f8f94;
+}
+.lt_product_item .price {
+  color: red;
+}
+.lt_product_item .oldPrice {
+  text-decoration: line-through;
+}
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #069;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  /* 使用动画: 动画名称 动画时间 动画次数 */
+  /* infinite 无限次 */
+  animation: rotate 1s infinite ease-in-out;
+}
+/* 定义动画 */
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

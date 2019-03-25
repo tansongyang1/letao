@@ -1,0 +1,110 @@
+// 搜索框
+.lt_search {
+  padding: 10px;
+  position: relative;
+
+  .search_input {
+    height: 34px;
+    padding-left: 15px;
+    padding-right: 33px;
+    margin: 0;
+    border: 1px solid #007AFF;
+    font-size: 12px;
+  }
+
+  .search_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+
+
+
+
+.lt_sort{
+  height: 30px;
+  line-height: 30px;
+  background: #eee;
+  font-size: 12px;
+  text-align: center;
+  a {
+    display: block;
+    float: left;
+    width: 25%; 
+    color: #666;
+    &.current {
+      color: #FF8C00;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// 商品
+.lt_product {
+  padding: 10px;
+
+}
+.lt_product_item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  float: left;
+  width: 48%;
+  margin-bottom: 10px;
+  text-align: center;
+
+  &:nth-child(2n+1) {
+    margin-right: 4%;
+  }
+  img {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+  }
+  p {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #8f8f94;
+  }
+  .price {
+    color: red;
+  }
+  .oldPrice {
+    text-decoration: line-through;
+  }
+}
+
+
+
+
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #069;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  /* 使用动画: 动画名称 动画时间 动画次数 */
+  /* infinite 无限次 */
+  animation: rotate 1s infinite ease-in-out;
+}
+
+/* 定义动画 */
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
