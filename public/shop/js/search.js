@@ -2,8 +2,8 @@ $(function () {
 
   // 封装读取历史记录
   function gethistory() {
-    var history = localStorage.getItem('search_list') || '[]'
-    var arr = JSON.parse(history)
+    var history = localStorage.getItem('search_list')
+    var arr = JSON.parse(history) || []
     return arr
 
   }
