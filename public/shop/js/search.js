@@ -47,7 +47,7 @@ $(function () {
         localStorage.setItem("search_list", jsp);
         // 重新渲染
         render();
-      }
+      } 
     })
   })
   // 点击搜索添加历史记录
@@ -73,7 +73,7 @@ $(function () {
     arr.unshift(key)
     var jsp = JSON.stringify(arr)
     localStorage.setItem("search_list", jsp)
-    render()
+    // render()
     $('.search_input').val('')
 
     location.href = "searchList.html?key=" + key;

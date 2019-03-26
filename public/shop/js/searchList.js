@@ -58,9 +58,9 @@ $(function () {
 
     // 判断是否有current类名进行排序
     var current = $('.lt_sort a.current')
-    if(current.length >0){
+    if (current.length > 0) {
       var sort = current.data('type')
-      var value = current.find('i').hasClass('fa-angle-down')?2:1
+      var value = current.find('i').hasClass('fa-angle-down') ? 2 : 1
       params[sort] = value
     }
 
@@ -84,6 +84,7 @@ $(function () {
       $(this).find('i').toggleClass('fa-angle-down').toggleClass('fa-angle-up')
     } else {
       $(this).addClass('current').siblings().removeClass('current')
+      $('.lt_sort i').addClass('fa-angle-down').removeClass('fa-angle-up')
 
     }
 

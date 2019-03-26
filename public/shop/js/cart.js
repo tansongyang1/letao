@@ -1,5 +1,3 @@
-
-
 $(function () {
   render()
 
@@ -16,11 +14,36 @@ $(function () {
           return;
         }
 
-        $('.lt_main ul').html(template('lt_cart',{arr:info}))
+        $('.lt_main ul').html(template('lt_cart', {
+          arr: info
+        }))
 
 
       }
     })
   }
+
+  $('.lt_main').on('click', '.btn_delete', function (e) {
+    // e.preventDefault()
+    var id = $(this).data('id');
+    console.log(id);
+    $.ajax({
+      type: 'get',
+      url: '/cart/deleteCart',
+      data: {
+        id: [id]
+      },
+      success: function (info) {
+        console.log(info);
+
+        if (info.success) {
+          render()
+        }
+
+      }
+    })
+
+  })
+
 
 })
